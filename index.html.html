@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Selected Projects — Rebecca Vano de Carvalho</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#E2742E;
+    --orange-deep:#C85A1E;
+    --orange-pale:#FBE3CF;
+    --orange-paler:#FFF3E7;
+    --brown:#4A3B2C;
+    --gray:#7A7468;
+    --bg:#FFFDFB;
+    --card:#FFFFFF;
+    --line:#F0E4D6;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--bg); font-family:'Inter',sans-serif; color:var(--brown);}
+  .page{max-width:880px; margin:0 auto; background:var(--card); position:relative; overflow:hidden;}
+  h1,h2,h3{font-family:'Poppins',sans-serif; margin:0;}
+
+  /* ---------- HEADER ---------- */
+  .top{
+    background:linear-gradient(135deg,var(--orange-paler) 0%, var(--orange-pale) 100%);
+    padding:48px 48px 38px; position:relative; text-align:center;
+  }
+  .top::before{
+    content:""; position:absolute; left:-50px; top:-50px; width:180px; height:180px;
+    border:1.5px dashed var(--orange); opacity:.35; border-radius:50%;
+  }
+  .top::after{
+    content:""; position:absolute; right:-40px; bottom:-60px; width:160px; height:160px;
+    border:1.5px dashed var(--orange); opacity:.35; border-radius:50%;
+  }
+  .icon-strip{display:flex; justify-content:center; gap:14px; margin-bottom:18px; position:relative; z-index:2;}
+  .icon-strip .ic{
+    width:46px; height:46px; border-radius:50%; background:#fff; border:1.5px solid var(--orange);
+    display:flex; align-items:center; justify-content:center; box-shadow:0 4px 10px rgba(226,116,46,.12);
+  }
+  .icon-strip .ic svg{width:21px; height:21px; stroke:var(--orange-deep);}
+  .top h1{font-size:28px; font-weight:800; color:var(--brown); position:relative; z-index:2;}
+  .top .sub{
+    margin:12px auto 0; max-width:480px; font-size:14.5px; line-height:1.6; color:var(--gray);
+    position:relative; z-index:2;
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .projects{padding:36px 48px 8px;}
+  .company-group{margin-bottom:34px;}
+  .company-head{display:flex; align-items:center; gap:12px; margin-bottom:16px;}
+  .company-icon{
+    width:42px; height:42px; border-radius:50%; background:var(--orange-pale);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .company-icon svg{width:20px; height:20px; stroke:var(--orange-deep);}
+  .company-head h2{font-size:17px; font-weight:700; color:var(--brown);}
+  .company-head .sector{font-size:11.5px; color:var(--gray); font-weight:500; margin-top:1px;}
+  .company-head .rule{flex:1; height:1px; background:var(--line); margin-left:6px;}
+
+  .cards{display:grid; grid-template-columns:1fr 1fr; gap:16px;}
+  .cards.single{grid-template-columns:1fr;}
+  .card{
+    background:var(--orange-paler); border:1px solid var(--line); border-radius:14px;
+    padding:20px 22px; position:relative; overflow:hidden;
+  }
+  .card::before{
+    content:""; position:absolute; right:-26px; top:-26px; width:90px; height:90px;
+    border-radius:50%; background:var(--orange-pale); opacity:.6;
+  }
+  .card-top{display:flex; align-items:flex-start; gap:12px; margin-bottom:10px; position:relative; z-index:2;}
+  .card-icon{
+    width:36px; height:36px; border-radius:10px; background:#fff; border:1.5px solid var(--orange-pale);
+    display:flex; align-items:center; justify-content:center; flex-shrink:0;
+  }
+  .card-icon svg{width:18px; height:18px; stroke:var(--orange-deep);}
+  .card-title{font-family:'Poppins',sans-serif; font-weight:700; font-size:14.5px; line-height:1.35; padding-top:4px; color:var(--brown);}
+  .card-text{font-size:12.8px; line-height:1.6; color:var(--gray); position:relative; z-index:2;}
+  .highlights{list-style:none; margin:12px 0 0; padding:0; position:relative; z-index:2;}
+  .highlights li{
+    display:flex; align-items:flex-start; gap:8px; font-size:12.3px; line-height:1.5;
+    color:var(--brown); margin-bottom:7px;
+  }
+  .highlights li svg{width:13px; height:13px; stroke:var(--orange-deep); flex-shrink:0; margin-top:2px;}
+  .card-result{
+    margin-top:13px; padding-top:12px; border-top:1px dashed var(--orange-pale);
+    font-size:11.8px; font-weight:600; color:var(--orange-deep); line-height:1.5;
+    display:flex; gap:7px; position:relative; z-index:2;
+  }
+  .card-result svg{width:13px; height:13px; flex-shrink:0; margin-top:1px;}
+
+  /* ---------- GET IN TOUCH ---------- */
+  .contact{
+    margin:30px 48px 48px; background:var(--orange-pale); border-radius:18px;
+    padding:30px 36px; text-align:center;
+  }
+  .contact h3{font-size:13px; letter-spacing:2px; text-transform:uppercase; color:var(--orange-deep); font-weight:700; margin-bottom:16px;}
+  .contact-grid{display:flex; flex-wrap:wrap; justify-content:center; gap:22px;}
+  .contact-row{display:flex; align-items:center; gap:8px; font-size:13px; color:var(--brown); font-weight:500;}
+  .contact-row svg{width:15px; height:15px; stroke:var(--orange-deep); flex-shrink:0;}
+  .contact .note{margin-top:18px; font-size:12px; color:var(--gray); line-height:1.6;}
+
+  @media (max-width:600px){
+    .top, .projects, .contact{padding-left:22px; padding-right:22px;}
+    .cards{grid-template-columns:1fr;}
+    .contact{margin-left:22px; margin-right:22px;}
+  }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+<defs>
+  <symbol id="ic-refresh" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12a9 9 0 0115-6.7M21 12a9 9 0 01-15 6.7"/><path d="M16 3v5h-5M8 21v-5h5"/></symbol>
+  <symbol id="ic-network" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5" cy="5" r="2.2"/><circle cx="19" cy="5" r="2.2"/><circle cx="12" cy="19" r="2.2"/><path d="M6.7 6.3L11 17.5M17.3 6.3L13 17.5"/></symbol>
+  <symbol id="ic-funnel" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16l-6 8v6l-4 2v-8L4 4z"/></symbol>
+  <symbol id="ic-blocks" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><rect x="14" y="14" width="7" height="7" rx="1"/></symbol>
+  <symbol id="ic-globe" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a13 13 0 010 18M12 3a13 13 0 000 18"/></symbol>
+  <symbol id="ic-book" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5V5.5A2 2 0 016 3.5h7v17H6a2 2 0 01-2-1.5z"/><path d="M13 3.5h5a2 2 0 012 2v14a2 2 0 01-2 2h-5"/></symbol>
+  <symbol id="ic-archive" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="5" rx="1"/><path d="M5 8v11a2 2 0 002 2h10a2 2 0 002-2V8"/><path d="M10 13h4"/></symbol>
+  <symbol id="ic-flag" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 3v18"/><path d="M5 4h12l-3 4 3 4H5z"/></symbol>
+  <symbol id="ic-pack" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></symbol>
+  <symbol id="ic-chip" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="6" width="12" height="12" rx="1.5"/><path d="M9 3v3M15 3v3M9 18v3M15 18v3M3 9h3M3 15h3M18 9h3M18 15h3"/></symbol>
+  <symbol id="ic-leaf" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 3C12 3 4 8 4 17c0 1.5 1 2 1 2s.5-1 2-1c9 0 14-8 14-15z"/><path d="M5 19c4-4 8-7 13-13"/></symbol>
+  <symbol id="ic-mail" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+  <symbol id="ic-phone" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></symbol>
+  <symbol id="ic-pin" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-7.2 7-12a7 7 0 10-14 0c0 4.8 7 12 7 12z"/><circle cx="12" cy="9" r="2.4"/></symbol>
+  <symbol id="ic-link" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 17H7a5 5 0 010-10h2"/><path d="M15 7h2a5 5 0 010 10h-2"/><path d="M8 12h8"/></symbol>
+  <symbol id="ic-check" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12l5 5L20 6"/></symbol>
+  <symbol id="ic-arrow" viewBox="0 0 24 24" fill="none" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+</defs>
+</svg>
+
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="top">
+    <div class="icon-strip">
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-refresh"/></svg></div>
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-funnel"/></svg></div>
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-globe"/></svg></div>
+      <div class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-book"/></svg></div>
+    </div>
+    <h1>Selected Projects</h1>
+    <p class="sub">Let's dive deeper into some of my most relevant projects.</p>
+  </div>
+
+  <!-- PROJECTS -->
+  <div class="projects">
+
+    <div class="company-group">
+      <div class="company-head">
+        <div class="company-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-pack"/></svg></div>
+        <div><h2>Macron Indústria Gráfica</h2><div class="sector">Packaging industry · Brazil</div></div>
+        <div class="rule"></div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-refresh"/></svg></div><div class="card-title">70th Anniversary Rebrand</div></div>
+          <div class="card-text">Changing the logo of a decades-old family company was a real risk. The goal: modernize the image while honoring 70 years of heritage and reassuring loyal clients.</div>
+          <ul class="highlights">
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Coordinated daily with branding agency Azarov on the new identity</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Organized the full launch event, suppliers and invitations</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Produced bilingual (PT/EN) materials for international guests</li>
+          </ul>
+          <div class="card-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><use href="#ic-arrow"/></svg>New identity unveiled for 200+ guests, alongside a commemorative 70-year book.</div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-network"/></svg></div><div class="card-title">First Digital Strategy</div></div>
+          <div class="card-text">Macron had almost no digital presence. I proposed turning LinkedIn into the company's main B2B channel and owned the project end to end.</div>
+          <ul class="highlights">
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Defined the editorial line and content calendar</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Wrote, produced and published all content</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Organized photoshoots and agency coordination</li>
+          </ul>
+          <div class="card-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><use href="#ic-arrow"/></svg>A full content strategy built from absolute zero.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="company-group">
+      <div class="company-head">
+        <div class="company-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-chip"/></svg></div>
+        <div><h2>PLMX Soluções</h2><div class="sector">Technology · Brazil</div></div>
+        <div class="rule"></div>
+      </div>
+      <div class="cards single">
+        <div class="card">
+          <div class="card-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-funnel"/></svg></div><div class="card-title">First Inbound Marketing Campaigns</div></div>
+          <div class="card-text">With no agency support, I became responsible for the entire digital strategy. With my manager, I designed PLMX's first two inbound campaigns, promoting Siemens NX and Solid Edge through a complete lead-generation journey.</div>
+          <ul class="highlights">
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Built landing pages, gated content and free software trials</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Set up HubSpot automation, email scenarios and lead scoring</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Owned SEO, Google Ads, social and the website on top of this</li>
+          </ul>
+          <div class="card-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><use href="#ic-arrow"/></svg>+10% sales growth in the first year — proof inbound marketing could drive real revenue.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="company-group">
+      <div class="company-head">
+        <div class="company-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-pack"/></svg></div>
+        <div><h2>Ápice Artes Gráficas</h2><div class="sector">Packaging industry · Brazil</div></div>
+        <div class="rule"></div>
+      </div>
+      <div class="cards single">
+        <div class="card">
+          <div class="card-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-blocks"/></svg></div><div class="card-title">Marketing Department From Zero</div></div>
+          <div class="card-text">Ápice had no marketing department and ran on entirely manual sales processes. I was hired to build the function from the ground up — and to bring experienced colleagues along on the change.</div>
+          <ul class="highlights">
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Created the first marketing plan and marketing-sales processes</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Implemented a CRM and integrated HubSpot</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Launched a new website and the first automated lead flows</li>
+          </ul>
+          <div class="card-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><use href="#ic-arrow"/></svg>Solid foundations left behind after 9 months, ready for the team to keep building.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="company-group">
+      <div class="company-head">
+        <div class="company-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-globe"/></svg></div>
+        <div><h2>SkyOne Solutions</h2><div class="sector">Technology · Brazil — present in 27 countries</div></div>
+        <div class="rule"></div>
+      </div>
+      <div class="cards single">
+        <div class="card">
+          <div class="card-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-globe"/></svg></div><div class="card-title">International Ecosystem Rebrand</div></div>
+          <div class="card-text">SkyOne owned several legacy products that clients perceived as separate companies. The rebrand went far beyond a new identity — it meant building one coherent brand architecture across direct sales and a wide reseller network, in Portuguese, English and Spanish.</div>
+          <ul class="highlights">
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Renamed products and rebuilt the visual identity and positioning</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Ran segmented email and ad campaigns plus partner events</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Designed onboarding journeys with Customer Experience teams</li>
+          </ul>
+          <div class="card-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><use href="#ic-arrow"/></svg>A fragmented product portfolio became one legible, global brand: SkyOne.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="company-group">
+      <div class="company-head">
+        <div class="company-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-leaf"/></svg></div>
+        <div><h2>Danone</h2><div class="sector">Food · France — Global Corporate Brand &amp; Communications</div></div>
+        <div class="rule"></div>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="card-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-flag"/></svg></div><div class="card-title">Evian's 200th Anniversary Activation</div></div>
+          <div class="card-text">An internal activation at HQ Lafayette celebrating 200 years of Evian, designed to bring the brand's heritage to life for employees on a tight budget.</div>
+          <ul class="highlights">
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Sourced suppliers and scenography materials</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Coordinated with Global Design and Evian's marketing teams</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Designed a quiz and historical product replicas</li>
+          </ul>
+          <div class="card-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><use href="#ic-arrow"/></svg>HQ's library became an immersive space telling Evian's story.</div>
+        </div>
+        <div class="card">
+          <div class="card-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-book"/></svg></div><div class="card-title">Brand Legacy Strategy</div></div>
+          <div class="card-text">An ongoing strategic project to preserve and value Danone's historical assets — archives, objects, campaigns and iconography — into a long-term brand strategy.</div>
+          <ul class="highlights">
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Mapping historical assets across the group</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Exploring exhibition / museum-style formats with specialist agencies</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Structuring the "Brand Legacy" strategic framework</li>
+          </ul>
+          <div class="card-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><use href="#ic-arrow"/></svg>Shaping how Danone's heritage is preserved for the long term.</div>
+        </div>
+        <div class="card" style="grid-column:1 / -1;">
+          <div class="card-top"><div class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-archive"/></svg></div><div class="card-title">Global Corporate Brand Book Launch</div></div>
+          <div class="card-text">After spotting inconsistencies in how the corporate brand was used across Business Units, I'm leading the communication strategy behind Danone's updated Brand Book — not just publishing a guideline, but driving its adoption worldwide.</div>
+          <ul class="highlights">
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Defined the international communication plan, target audiences and key messages</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Launched a dedicated community space on Engage</li>
+            <li><svg viewBox="0 0 24 24" fill="none"><use href="#ic-check"/></svg>Driving governance actions for consistent use across every region</li>
+          </ul>
+          <div class="card-result"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><use href="#ic-arrow"/></svg>Building a global brand culture, not just rolling out a guideline.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- GET IN TOUCH -->
+  <div class="contact">
+    <h3>Get in Touch</h3>
+    <div class="contact-grid">
+      <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-phone"/></svg>+33 07 63 93 19 33</div>
+      <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-mail"/></svg>rebeccavanoc@hotmail.com</div>
+      <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-link"/></svg>linkedin.com/in/rebeccavano</div>
+      <div class="contact-row"><svg viewBox="0 0 24 24" fill="none" stroke-width="2"><use href="#ic-pin"/></svg>Carrières-sur-Seine, France</div>
+    </div>
+    <div class="note">Open to opportunities in Brand Management or Strategic Communication starting September 2026.</div>
+  </div>
+
+</div>
+</body>
+</html>
